@@ -175,3 +175,26 @@ class Matrix(object):
         newMatrix.columns -= 1
 
         return newMatrix
+
+def inverse_matrix(self):
+        '''Return the inverse matrix.'''
+        det = self.determinant()
+        if det == 0:
+            raise Exception("Matrix not invertible")
+        else:
+            algebricComplementsMatrix = self.algebric_complements_matrix()
+            inverseMatrix = 1/det * algebricComplementsMatrix.transpose()
+
+            return inverseMatrix
+
+ def symmetric_part(self):
+        '''Return the symmetric part of the matrix.'''
+        newMatrix = 1/2 * (self + self.transpose())
+
+        return newMatrix
+
+ def antisymmetric_part(self):
+        '''Return the antisymmetric part of the matrix.'''
+        newMatrix = 1/2 * (self - self.transpose())
+
+        return newMatrix
