@@ -4,7 +4,6 @@
 from random import randint
 from copy import deepcopy
 
-
 class Matrix(object):
 
     def __init__(self, rows, columns):
